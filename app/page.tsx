@@ -8,13 +8,10 @@ import {
   DollarSign, 
   Target, 
   TrendingUp, 
-  Shield, 
-  Zap,
+  Shield,
   CheckCircle,
   Users,
-  ArrowRight,
-  Star,
-  Quote
+  ArrowRight
 } from 'lucide-react'
 
 export default function HomePage() {
@@ -22,7 +19,6 @@ export default function HomePage() {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -47,7 +43,6 @@ export default function HomePage() {
             </div>
           </div>
           
-          {/* Trust Indicators */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="flex items-center justify-center gap-2">
               <Shield className="w-6 h-6 text-green-600" />
@@ -65,7 +60,68 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Features Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Stop Losing Revenue to Bad Reviews
+              </h2>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+                  <p className="text-gray-600">
+                    <strong>$10,000-50,000 lost annually</strong> from negative reviews deterring customers
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+                  <p className="text-gray-600">
+                    <strong>10+ hours weekly</strong> spent manually checking reviews across platforms
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+                  <p className="text-gray-600">
+                    <strong>No clear action plan</strong> to improve ratings systematically
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+                  <p className="text-gray-600">
+                    <strong>Blind to competitor performance</strong> and market positioning
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold text-gray-900">
+                ClarifyIQ Solution:
+              </h3>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg">
+                  <CheckCircle className="w-5 h-5 text-green-600" />
+                  <span>Automated daily monitoring of your business + competitors</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 bg-blue-50 rounded-lg">
+                  <CheckCircle className="w-5 h-5 text-blue-600" />
+                  <span>Quantify exact revenue impact of each issue</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 bg-purple-50 rounded-lg">
+                  <CheckCircle className="w-5 h-5 text-purple-600" />
+                  <span>Step-by-step action plans to fix problems</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 bg-yellow-50 rounded-lg">
+                  <CheckCircle className="w-5 h-5 text-yellow-600" />
+                  <span>Track improvement and ROI over time</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -134,7 +190,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ROI Calculator Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -149,7 +204,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Analysis Form Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -164,7 +218,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
+      <section className="py-16 bg-gradient-to-r from-purple-600 to-blue-600">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Stop Guessing, Start Growing
+          </h2>
+          <p className="text-xl text-purple-100 mb-8">
+            Join hundreds of businesses that have transformed their online reputation 
+            into their strongest revenue driver with ClarifyIQ.
+          </p>
+          <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
+            Get Your Free Analysis Now
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
+          <p className="text-purple-200 mt-4">
+            Free analysis • No credit card required • Results in 5 minutes
+          </p>
+        </div>
+      </section>
+
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -182,7 +254,5 @@ export default function HomePage() {
         </div>
       </footer>
     </div>
-
-cat > lib/supabase/server.ts << 'EOF'
-)
+  )
 }
