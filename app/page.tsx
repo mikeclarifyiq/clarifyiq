@@ -129,7 +129,7 @@ export default function HomePage() {
               Powerful Intelligence, Simple Results
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our AI doesn't just analyze sentiment—it decodes exactly what's costing you money 
+              Our AI doesn&apos;t just analyze sentiment—it decodes exactly what&apos;s costing you money 
               and delivers precise actions to fix it.
             </p>
           </div>

@@ -9,8 +9,6 @@ import { Calculator, TrendingUp } from 'lucide-react'
 export function ROICalculator() {
   const [businessType, setBusinessType] = useState('hvac')
   const [monthlyRevenue, setMonthlyRevenue] = useState(50000)
-  const [currentRating, setCurrentRating] = useState(3.8)
-  const [reviewCount, setReviewCount] = useState(45)
 
   const businessTypes = {
     hvac: { name: 'HVAC', multiplier: 1.2 },
@@ -20,8 +18,8 @@ export function ROICalculator() {
     restaurant: { name: 'Restaurant', multiplier: 0.9 }
   }
 
-  const ratingImpact = (4.5 - currentRating) * 0.15 * monthlyRevenue
-  const reviewVolumeImpact = Math.max(0, (100 - reviewCount) * 50)
+  const ratingImpact = (4.5 - 3.8) * 0.15 * monthlyRevenue
+  const reviewVolumeImpact = Math.max(0, (100 - 45) * 50)
   const industryMultiplier = businessTypes[businessType as keyof typeof businessTypes].multiplier
   
   const monthlyOpportunity = (ratingImpact + reviewVolumeImpact) * industryMultiplier
