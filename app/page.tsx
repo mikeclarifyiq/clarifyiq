@@ -13,6 +13,10 @@ import {
   Users,
   ArrowRight
 } from 'lucide-react'
+import { ReviewStreamProvider } from "@/app/components/review-stream/review-stream-provider"
+import { WaterfallColumn } from "@/app/components/review-stream/waterfall-column"
+import { SpotlightSplitter } from "@/app/components/review-stream/spotlight-splitter"
+import { AttributeBins } from "@/app/components/review-stream/attribute-bins"
 
 export default function HomePage() {
   return (
@@ -201,6 +205,21 @@ export default function HomePage() {
             </p>
           </div>
           <ROICalculator />
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center mb-12">Live Voice of the Customer</h2>
+          <ReviewStreamProvider>
+            <div className="flex justify-center items-start gap-12">
+              <WaterfallColumn />
+              <div className="relative">
+                <SpotlightSplitter />
+              </div>
+              <AttributeBins />
+            </div>
+          </ReviewStreamProvider>
         </div>
       </section>
 
