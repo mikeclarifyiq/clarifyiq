@@ -1,0 +1,14 @@
+requests
+aiohttp
+pydantic
+python-dotenv
+transformers
+sentence-transformers
+vaderSentiment
+fastapi
+uvicorn
+psycopg2-binary
+sqlalchemy
+apscheduler
+openai
+chromadb
