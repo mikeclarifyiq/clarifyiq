@@ -3,14 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/app/components/ui/ca
 import { Header } from '@/app/components/layout/header'
 import { ROICalculator } from '@/app/components/features/roi-calculator'
 import { AnalysisForm } from '@/app/components/features/analysis-form'
+import { ParticleScene } from '@/app/components/ParticleScene'
 import { 
-  Brain, 
-  DollarSign, 
-  Target, 
-  TrendingUp, 
-  Shield,
+  Brain,
+  DollarSign,
+  Target,
+  TrendingUp,
   CheckCircle,
-  Users,
   ArrowRight
 } from 'lucide-react'
 import { ReviewStreamProvider } from "@/app/components/review-stream/review-stream-provider"
@@ -22,45 +21,26 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      
-      <section className="pt-24 pb-16 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Turn Review Chaos into
-              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent block">
-                Revenue Clarity
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              AI-powered intelligence that transforms scattered reviews into strategic growth opportunities. 
-              See exactly what reviews are costing you and get the precise actions to fix it.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-4">
-                Get Your Free Analysis
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-                Watch Demo
-              </Button>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="flex items-center justify-center gap-2">
-              <Shield className="w-6 h-6 text-green-600" />
-              <span className="text-gray-600">95% Analysis Accuracy</span>
-            </div>
-            <div className="flex items-center justify-center gap-2">
-              <Users className="w-6 h-6 text-blue-600" />
-              <span className="text-gray-600">500+ Businesses Analyzed</span>
-            </div>
-            <div className="flex items-center justify-center gap-2">
-              <TrendingUp className="w-6 h-6 text-purple-600" />
-              <span className="text-gray-600">$2.1M Revenue Identified</span>
-            </div>
-          </div>
+
+      <section
+        id="hero"
+        className="relative h-screen flex flex-col items-center justify-center text-white bg-black overflow-hidden"
+      >
+        <ParticleScene streams={3} />
+
+        <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+          <h1 className="text-5xl font-extrabold drop-shadow-lg text-center">
+            Steal Tomorrow’s Calls—Rise to the Top
+          </h1>
+          <p className="mt-4 text-lg drop-shadow text-center">
+            We measure 200 levers—here are three.
+          </p>
+        </div>
+
+        <div className="absolute bottom-16 opacity-0 animate-fade-in-up delay-[4s]">
+          <button className="bg-gradient-to-r from-purple-500 to-blue-400 px-8 py-3 rounded-full font-semibold">
+            Run My Local Scan
+          </button>
         </div>
       </section>
 
