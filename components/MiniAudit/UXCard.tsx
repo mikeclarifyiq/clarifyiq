@@ -1,8 +1,5 @@
 "use client";
 import React, { useState } from 'react';
-import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
-import FlipNumbers from 'react-flip-numbers';
 import { UXInputs } from './variables';
 import { motion } from 'framer-motion';
 
@@ -33,17 +30,38 @@ export default function UXCard(props: UXInputs) {
 
       <div>
         <label className="block text-sm text-gray-600">LCP: {lcp} ms</label>
-        <Slider min={500} max={3000} value={lcp} onChange={v => setLcp(v as number)} trackStyle={{ background: 'linear-gradient(90deg,#DC2626,#10B981)' }} handleStyle={{ borderColor: '#10B981' }} />
+        <input
+          type="range"
+          min={500}
+          max={3000}
+          value={lcp}
+          onChange={e => setLcp(parseFloat(e.target.value))}
+          className="w-full accent-green-500"
+        />
       </div>
 
       <div>
         <label className="block text-sm text-gray-600">Taps to Book: {taps}</label>
-        <Slider min={1} max={6} value={taps} onChange={v => setTaps(v as number)} trackStyle={{ background: '#F97316' }} handleStyle={{ borderColor: '#F97316' }} />
+        <input
+          type="range"
+          min={1}
+          max={6}
+          value={taps}
+          onChange={e => setTaps(parseFloat(e.target.value))}
+          className="w-full accent-orange-500"
+        />
       </div>
 
       <div>
         <label className="block text-sm text-gray-600">Image Quality: {imgQ}</label>
-        <Slider min={0} max={100} value={imgQ} onChange={v => setImgQ(v as number)} trackStyle={{ background: '#EC4899' }} handleStyle={{ borderColor: '#EC4899' }} />
+        <input
+          type="range"
+          min={0}
+          max={100}
+          value={imgQ}
+          onChange={e => setImgQ(parseFloat(e.target.value))}
+          className="w-full accent-pink-500"
+        />
       </div>
 
       <button
@@ -58,7 +76,9 @@ export default function UXCard(props: UXInputs) {
       {delta !== null && (
         <motion.div className="mt-4 flex justify-center items-baseline space-x-1 text-blue-800" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <span className="text-2xl font-mono">$</span>
-          <FlipNumbers height={40} width={24} play numbers={delta.toString()} />
+          <motion.span key={delta} initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} className="text-2xl font-mono">
+            {delta}
+          </motion.span>
           <span>/{revenue_unit === 'monthly' ? 'mo' : 'yr'}</span>
         </motion.div>
       )}

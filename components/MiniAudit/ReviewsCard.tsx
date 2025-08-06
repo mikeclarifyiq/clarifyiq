@@ -1,8 +1,5 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
-import FlipNumbers from 'react-flip-numbers';
 import { motion } from 'framer-motion';
 import { ReviewsInputs } from './variables';
 import { fetchGMB } from '@/utils/fetchGMB';
@@ -42,11 +39,14 @@ export default function ReviewsCard(props: ReviewsInputs) {
       {!autoDetect && (
         <div>
           <label className="text-sm text-gray-600">Star Rating: {star.toFixed(1)}</label>
-          <Slider
-            min={1} max={5} step={0.1} value={star}
-            onChange={v => setStar(v as number)}
-            trackStyle={{ background: 'linear-gradient(90deg,#6F5BFF, #3A99FF)' }}
-            handleStyle={{ borderColor: '#6F5BFF', height: 20, width: 20, marginTop: -8, backgroundColor: 'white' }}
+          <input
+            type="range"
+            min={1}
+            max={5}
+            step={0.1}
+            value={star}
+            onChange={e => setStar(parseFloat(e.target.value))}
+            className="w-full accent-blue-500"
           />
         </div>
       )}
@@ -58,11 +58,25 @@ export default function ReviewsCard(props: ReviewsInputs) {
         <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} className="space-y-4">
           <div>
             <label className="text-sm text-gray-600">Review Velocity: {velocity}</label>
-            <Slider min={0} max={20} value={velocity} onChange={v => setVelocity(v as number)} trackStyle={{ background: '#3A99FF' }} handleStyle={{ background: 'white', borderColor: '#3A99FF' }} />
+            <input
+              type="range"
+              min={0}
+              max={20}
+              value={velocity}
+              onChange={e => setVelocity(parseFloat(e.target.value))}
+              className="w-full accent-blue-500"
+            />
           </div>
           <div>
             <label className="text-sm text-gray-600">Response Rate: {responseRate}%</label>
-            <Slider min={0} max={100} value={responseRate} onChange={v => setResponseRate(v as number)} trackStyle={{ background: '#3A99FF' }} handleStyle={{ background: 'white', borderColor: '#3A99FF' }} />
+            <input
+              type="range"
+              min={0}
+              max={100}
+              value={responseRate}
+              onChange={e => setResponseRate(parseFloat(e.target.value))}
+              className="w-full accent-blue-500"
+            />
           </div>
         </motion.div>
       )}
@@ -85,7 +99,14 @@ export default function ReviewsCard(props: ReviewsInputs) {
           ) : (
             <div className="flex justify-center items-baseline space-x-1">
               <span className="text-2xl font-mono">$</span>
-              <FlipNumbers height={40} width={24} play numbers={delta.toString()} />
+              <motion.span
+                key={delta}
+                initial={{ opacity: 0, y: -4 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-2xl font-mono"
+              >
+                {delta}
+              </motion.span>
               <span className="text-gray-600">/{revenue_unit === 'monthly' ? 'mo' : 'yr'}</span>
             </div>
           )}
