@@ -52,11 +52,11 @@ export default function SEOCart(props: SEOInputs) {
         Calculate
       </button>
 
-      {delta !== null && (
-        <motion.div className="mt-4 text-center text-xl font-mono text-blue-800" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          ${'{'}delta{'}'}/{revenue_unit === 'monthly' ? 'mo' : 'yr'}
-        </motion.div>
-      )}
+        {delta !== null && (
+          <motion.div className="mt-4 text-center text-xl font-mono text-blue-800" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            {`$${delta}/${revenue_unit === 'monthly' ? 'mo' : 'yr'}`}
+          </motion.div>
+        )}
     </div>
   );
 }
