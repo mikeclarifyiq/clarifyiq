@@ -1,0 +1,28 @@
+create table if not exists markets (
+  market_id text primary key,
+  name text,
+  avg_star_rating numeric,
+  avg_review_velocity numeric,
+  avg_response_rate numeric,
+  avg_GMB_completion numeric,
+  avg_schema_markup numeric,
+  avg_citations numeric,
+  avg_keywords numeric,
+  avg_LCP_ms numeric,
+  avg_taps_to_book numeric,
+  avg_image_quality numeric,
+  weight_reviews numeric,
+  weight_seo numeric,
+  weight_ux numeric,
+  lever_star numeric,
+  lever_velocity numeric,
+  lever_response numeric,
+  lever_gmb numeric,
+  lever_schema numeric,
+  lever_citations numeric,
+  lever_keywords numeric,
+  lever_lcp numeric,
+  lever_taps numeric,
+  lever_image numeric
+);
+

@@ -3,8 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/app/components/ui/ca
 import { Header } from '@/app/components/layout/header'
 import { ROICalculator } from '@/app/components/features/roi-calculator'
 import { AnalysisForm } from '@/app/components/features/analysis-form'
-import { 
-  Brain, 
+import {
+  Brain,
   DollarSign, 
   Target, 
   TrendingUp, 
@@ -13,6 +13,7 @@ import {
   Users,
   ArrowRight
 } from 'lucide-react'
+import MiniAuditCard from '@/components/MiniAudit/MiniAuditCard'
 
 export default function HomePage() {
   return (
@@ -118,6 +119,16 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <MiniAuditCard type="reviews" />
+            <MiniAuditCard type="seo" />
+            <MiniAuditCard type="ux" />
           </div>
         </div>
       </section>
